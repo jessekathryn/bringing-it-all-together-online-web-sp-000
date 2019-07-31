@@ -51,9 +51,10 @@ attr_accessor :id, :name, :breed
      SQL
      
       DB[:conn].execute(sql, self.id:)
-      DB[:conn].exectue(sql,id).map do |row\
+      DB[:conn].exectue(sql,id).map do |row|
       self.new_from_db(row)
-    end.options_from_collection_for_selecte
+    end.first 
+  end
     
   def self.find_or_create_by(name:, breed:)
     sql = <<-SQL
