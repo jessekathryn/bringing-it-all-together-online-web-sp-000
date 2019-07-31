@@ -51,7 +51,6 @@ attr_accessor :id, :name, :breed
      SQL
      
       DB[:conn].execute(sql, self.id:)
-      Dog.new(self.id:)
     end
     
   def self.find_or_create_by(name:, breed:)
