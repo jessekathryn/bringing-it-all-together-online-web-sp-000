@@ -77,7 +77,7 @@ attr_accessor :id, :name, :breed
     dog
   end
   
-  def self.update
+  def update
     sql = <<-SQL
     UPDATE id WHERE name = ? AND breed = ?
     SQL
