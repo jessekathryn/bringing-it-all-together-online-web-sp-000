@@ -43,7 +43,9 @@ attr_accessor :id, :name, :breed
      LIMIT 1
      SQL
      
-     DB[:conn].execute(self.name)
+     DB[:conn].execute(id, name).map |row|
+     self.new_from_db(row)
+   end.first
   end
   
   def self.find_by_id(id)
