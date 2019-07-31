@@ -51,7 +51,7 @@ attr_accessor :id, :name, :breed
      SQL
      
       DB[:conn].execute(sql, self.id)
-      DB[:conn].exectue(sql,id:).map do |row|
+      DB[:conn].exectue(sql,id).map do |row|
       self.new_from_db(row)
     end.first 
   end
