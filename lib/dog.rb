@@ -91,5 +91,6 @@ attr_accessor :id, :name, :breed
     DB[:conn].execute(sql, self.name, self.breed)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     #Dog.new(id:result[0], name:result[1], breed:result[2])
+    self
   end
 end 
