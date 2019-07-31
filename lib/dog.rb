@@ -51,7 +51,7 @@ attr_accessor :id, :name, :breed
      LIMIT 1
      SQL
      
-     DB[:conn].exectue(sql, id).map do |row|
+     DB[:conn].execute(sql, id).map do |row|
      self.new_from_db(row)
     end.first 
   end
