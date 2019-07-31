@@ -50,8 +50,8 @@ attr_accessor :id, :name, :breed
      SELECT * FROM dogs WHERE id = ?
      SQL
      
-      DB[:conn].execute(sql, self.id)
-      Dog.new(self.id)
+      DB[:conn].execute(sql, self.id:)
+      Dog.new(self.id:)
     end
     
   def self.find_or_create_by(name:, breed:)
