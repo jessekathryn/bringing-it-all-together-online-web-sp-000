@@ -61,9 +61,9 @@ attr_accessor :id, :name, :breed
     result = DB[:conn].execute(sql, name)[0]
     Dog.new(result[0], result[1], result[2])
     
-    sql = <<-SQL
-    SELECT * FROM dogs WHERE name = ? and breed = ?
-    SQL
+   # sql = <<-SQL
+    #SELECT * FROM dogs WHERE name = ? and breed = ?
+   # SQL
     
     DB[:conn].execute(sql, name).map do |row|
     self.new_from_db(row)
