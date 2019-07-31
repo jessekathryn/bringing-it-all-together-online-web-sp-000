@@ -45,7 +45,7 @@ attr_accessor :id, :name, :breed
      DB[:conn].execute(self.name)
   end
   
-  def self.find_by_id(id:)
+  def self.find_by_id(id)
     sql = <<-SQL
      SELECT * FROM dogs WHERE id = ?
      SQL
