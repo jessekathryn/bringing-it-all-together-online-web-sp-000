@@ -58,8 +58,7 @@ attr_accessor :id, :name, :breed
     
   def self.find_or_create_by(name)
     sql = <<-SQL
-    SELECT * FROM dogs WHERE name = ? 
-    LIMIT 1
+    SELECT * FROM dogs WHERE name = ? and breed = ?
     SQL
     
     DB[:conn].execute(sql, name).map do |row|
