@@ -56,7 +56,7 @@ attr_accessor :id, :name, :breed
     end.first 
   end
     
-  def self.find_or_create_by(name)
+  def self.find_or_create_by(name:)
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_data = dog[0]
