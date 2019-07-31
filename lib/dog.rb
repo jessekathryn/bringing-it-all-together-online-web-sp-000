@@ -58,7 +58,7 @@ attr_accessor :id, :name, :breed
     
   def self.find_or_create_by(name)
     sql = <<-SQL
-    SELECT * FROM dogs WHERE name = ? AND breed = ?
+    SELECT * FROM dogs WHERE name = ? 
     LIMIT 1
     SQL
     
