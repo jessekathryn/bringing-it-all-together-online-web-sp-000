@@ -45,7 +45,7 @@ attr_accessor :id, :name, :breed
      DB[:conn].execute(self.name)
   end
   
-  def self.find_or_create_by(name, breed)
+  def self.find_or_create_by(name:, breed:)
     sql = <<-SQL
     SELECT * FROM dogs WHERE name = ? AND breed = ?
     SQL
